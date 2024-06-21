@@ -1,0 +1,33 @@
+.profile-sidebar-link {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  color: #023154;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.profile-sidebar-link:hover {
+  color: #fff;
+  background-color: #023154;
+  transition: 0.3s;
+}
+.active {
+  color: #fff;
+  background-color: #023154;
+}
+.tab-btn {
+  font-size: 14px;
+  color: #023154;
+  cursor: pointer;
+}
+.active-tab {
+  background-color: #def1fa;
+}
+
+.content-box .content {
+  display: none;
+}
+.content-box .content.active-content {
+  display: block;
+}

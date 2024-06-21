@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <title>Doctor</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Front Awesome Icon -->
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Header section -->
+    <header>
+        <div class="nav-container">
+            <nav class="navbar navbar-expand-lg mt-2 mb-2">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img class="nav-logo" src="assets/img/logo.png" alt="Logo">
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse justify-content-between align-items-center ms-2 navbar-collapse"
+                        id="navbarNavDropdown">
+
+                        <ul class="navbar-nav gap-2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctor.html">Find Doctor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Find Ambulance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Find Blood Donor</a>
+                            </li>
+                        </ul>
+
+                        <div class="account d-flex align-items-center gap-3">
+                            <a class="btn btn-outline-primary" href="login.html">Log in</a>
+                            <a class="btn btn-primary" href="">Sign up</a>
+                        </div>
+
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-regular fa-user"></i> My account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end mt-2">
+                                <li class="dropdown-item fw-medium">Rafi bin Wores</li>
+                                <li class="dropdown-item text-secondary" style="font-size: 14px;">
+                                    rafibinwores2203@gmail.com
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item fw-medium" href="">My
+                                        Account</a>
+                                </li>
+                                <li><a class="dropdown-item fw-medium" href="">Profile</a>
+                                </li>
+                                <li><a class="dropdown-item fw-medium" href="">Orders</a>
+                                </li>
+                                <li><a class="dropdown-item fw-medium" href="">Change
+                                        password</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item fw-medium" href="">logout</a>
+                                </li>
+                            </ul>
+                        </li> -->
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Breadcrumb -->
+        <section class="p-3" style="background-color: #023154; margin-bottom: 50px;">
+            <div class="container">
+                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                    aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                        <li class="breadcrumb-item text-secondary active" aria-current="page">FInd doctor</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <div class="container" style="margin-bottom: 100px;">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar" id="sidebar">
+                        <i class="fa-solid fa-xmark" id="close" onclick="closeSidebar()"></i>
+                        <p class="fw-medium border-bottom p-3" style="color: #3a3a3a;">Specialties</p>
+
+
+                        <form action="" method="post" class="p-3 pt-0">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                <label class="form-check-label fw-light" for="flexCheckDefault1"
+                                    style="font-size: 14px;">
+                                    Dentist
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                <label class="form-check-label fw-light" for="flexCheckDefault1"
+                                    style="font-size: 14px;">
+                                    Dentist
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                <label class="form-check-label fw-light" for="flexCheckDefault1"
+                                    style="font-size: 14px;">
+                                    Dentist
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-md-12 col-lg-9">
+                    <div class="d-flex align-items-center justify-content-between shadow-sm border rounded p-3">
+                        <h5 class="fw-bold mb-0" style="color: #3a3a3a;">All Doctors</h5>
+                        <p onclick="openSidebar()" id="filter" class="mb-0 d-lg-none d-block" style="cursor: pointer;">
+                            <i class="fa-regular fa-filter-list text-primary pe-1"></i> Filter
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card doctor-card mt-3">
+                                <img src="assets/img/doc.jpg" class="rounded-1 p-3 pb-0" alt="Doctor image">
+                                <div class="card-body p-3">
+                                    <span class="doctor-specialization">Dentist</span>
+                                    <p class="card-text mt-2 mb-1 fw-bold">
+                                        Asst. Prof. Dr. Tahmina Begum
+                                    </p>
+                                    <p class="card-text text-primary fw-medium mb-1" style="font-size: 14px;">
+                                        20 Years
+                                    </p>
+                                    <p class="card-text" style="font-size: 14px;">
+                                        House # 1-2, Block # D, Main Road, South Banasree, Dhaka, 1219
+                                    </p>
+
+                                    <a class="w-100 btn btn-outline-primary text-center" href="">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile sidebar overlay -->
+        <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="text-white pt-4" style="background-color: #023154;">
+        <div class="container text-center text-md-start">
+            <div class="row gx-4 text-center text-md-start">
+                <div class="col-md-3 col-lg-4 mx-auto mt-3">
+                    <div>
+                        <h5
+                            class="font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">
+                            MEDICARE</h5>
+                        <p>
+                            Say goodbye to endless phone calls and long queues. Book doctors' appointments, ambulance
+                            service, manage medical records, find blood donor and more. Take the first step towards
+                            better health.
+                        </p>
+                    </div>
+                    <div class="text-md-right">
+
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="" target="_blank" class="btn-floating btn-sm text-white"
+                                    style="font-size: 24px;"><i class="fi fi-brands-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" target="_blank" class="btn-floating btn-sm text-white"
+                                    style="font-size: 24px;"><i class="fi fi-brands-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-3 mx-auto mt-3">
+                    <h5
+                        class="md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">
+                        Top Services</h5>
+                    <p>
+                        <a href="houseVillaShifting" class="text-white" style="text-decoration: none">House & Villa
+                            Shifting</a>
+                    </p>
+                    <p>
+                        <a href="officeCorporateShifting" class="text-white" style="text-decoration: none">Office &
+                            Corporate Shifting</a>
+                    </p>
+                    <p>
+                        <a href="moversPackers" class="text-white" style="text-decoration: none">Movers & Packers</a>
+                    </p>
+                    <p>
+                        <a href="loadingUnloading" class="text-white" style="text-decoration: none">Loading &
+                            Unloading</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 mx-auto mt-3">
+                    <h5
+                        class="md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">
+                        Useful links</h5>
+                    <p>
+                        <a href="index" class="text-white">Home</a>
+                    </p>
+                    <p>
+                        <a href="" class="text-white" style="text-decoration: none">About us</a>
+                    </p>
+                    <p>
+                        <a href="contactUs" class="text-white" style="text-decoration: none">Contact us</a>
+                    </p>
+                    <p>
+                        <a href="bookAppointment" class="text-white" style="text-decoration: none">Book Appointment</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                    <h5
+                        class="md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">
+                        Contact Us</h5>
+                    <p>
+                        <i class="fa-solid fa-house"></i> Dhaka, Bangladesh
+                    </p>
+                    <p>
+                        <a class="text-white" href=""><i class="fa-regular fa-envelope"></i>
+                            medicare@gmail.com</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="tel:+97430910581"><i class="fa-solid fa-phone"></i> +880
+                            1712345678</a>
+                    </p>
+                </div>
+                <hr class="mb-4">
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>Copyright @2024 all rights reserved by:
+                        <a href="" style="text-decoration: none;">
+                            <strong class="text-white">Medicare</strong>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="" class="btn-floating btn-sm text-white me-3" style="font-size: 14px;">Terms &
+                                    Condition</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 14px;">Privacy
+                                    Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById('sidebar').style.right = '0';
+            document.getElementById('close').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').style.right = '-280px';
+            document.getElementById('close').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            document.body.classList.remove('no-scroll');
+        }
+    </script>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

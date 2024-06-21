@@ -1,0 +1,48 @@
+.blog {
+  margin-bottom: 100px;
+}
+.blog-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+.blog-description {
+  margin-top: 20px;
+  color: #617283;
+}
+.blog-category {
+  font-size: 14px;
+  color: #0d6efd;
+}
+.blog-category span {
+  padding-left: 12px;
+  color: #617283;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 16px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+}

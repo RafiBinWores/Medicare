@@ -1,0 +1,35 @@
+.title-content h3 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+.title-content p {
+  color: #617283;
+}
+.title-content a {
+  color: #023154;
+}
+
+/*============== Small device style ================*/
+@media screen and (max-width: 767px) {
+  .title-content h3 {
+    font-size: 20px;
+    /* font-weight: 400; */
+    color: #3a3a3a;
+  }
+  .title-content p {
+    font-size: 14px;
+  }
+}
+
+/*============== Medium device style ================*/
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .title-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #3a3a3a;
+  }
+  .title-content p {
+    font-size: 14px;
+  }
+}

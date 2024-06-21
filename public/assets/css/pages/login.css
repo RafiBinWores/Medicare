@@ -1,0 +1,50 @@
+.gradient-custom-2 {
+    background: rgb(4, 58, 139);
+    background: linear-gradient(
+        270deg,
+        rgba(4, 58, 139, 1) 0%,
+        rgba(25, 115, 249, 1) 55%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    box-shadow: 0 4px 9px -4px #386bc0;
+}
+.gradient-custom-2:hover {
+    box-shadow: 0 4px 15px -4px #386bc0;
+}
+.form-focus:focus {
+    border: 1px solid rgb(4, 58, 139);
+}
+.eye i {
+    position: absolute;
+    top: 11px;
+    right: 16px;
+    color: rgb(65, 86, 88);
+    cursor: pointer;
+    font-size: 15px;
+}
+#eyeSlash {
+    display: none;
+}
+.colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+}
+
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+    }
+}
