@@ -1,5 +1,5 @@
 "use strict";
-var quill = new Quill("#editor", {
+var quill = new Quill("#content_editor", {
     theme: "snow",
     modules: {
         toolbar: [
@@ -20,7 +20,7 @@ var quill = new Quill("#editor", {
         ],
     },
 });
-quill.on('text-change', function() {
+quill.on("text-change", function () {
     var content = quill.root.innerHTML;
-    document.getElementById('description').value = content;
+    document.getElementById("content").value = content;
 });

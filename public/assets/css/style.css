@@ -6,125 +6,113 @@
 @import url("component/specialization-card.css");
 @import url("component/doctor-card.css");
 @import url("component/blog.css");
+@import url("component/sidebar.css");
 
 /*================ Pages style ================*/
-@import url("pages/doctor.css");
 @import url("pages/profile.css");
+@import url("pages/doctor-details.css");
 
 /*============== Utilities ================*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 /*============== Header style ================*/
 .nav-logo {
-  width: 150px;
+    width: 150px;
 }
 .nav-link {
-  font-weight: 500;
-  color: #3a3a3a;
+    font-weight: 500;
+    color: #3a3a3a;
 }
 .nav-link:hover {
-  color: #0d6efd;
+    color: #0d6efd;
 }
 
 /*============== Hero style ================*/
 .hero {
-  padding-top: 60px;
-  margin-bottom: 100px;
+    padding-top: 60px;
+    margin-bottom: 100px;
 }
 .hero-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 30px;
 }
 .hero-title {
-  font-size: 36px;
-  color: #212121;
-  font-weight: 700;
+    font-size: 36px;
+    color: #212121;
+    font-weight: 700;
 }
 .hero-title span {
-  color: #0d6efd;
+    color: #0d6efd;
 }
 .hero-description {
-  margin-top: 30px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #3a3a3a;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3a3a3a;
 }
 
 /*============== specialization section style ================*/
 .specialization {
-  margin-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+/*============== Sweet alert style ================*/
+.colored-toast.swal2-icon-success {
+    background-color: #a5dc86 !important;
+}
+
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #f8bb86 !important;
 }
 
 /*============== Blog doctor style ================*/
 
 /*============== Small device style ================*/
 @media screen and (max-width: 767px) {
-  .hero {
-    padding-top: 30px;
-  }
-  .hero-content {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  /* .text-text {
+    .hero {
+        padding-top: 30px;
+    }
+    .hero-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* .text-text {
     display: grid;
     place-items: center;
   } */
-  /* .hero-content > .hero-image {
+    /* .hero-content > .hero-image {
     grid-column-start: 1;
     grid-row-start: 1;
   } */
-  .hero-title {
-    font-size: 24px;
-    font-weight: 700;
-  }
+    .hero-title {
+        font-size: 24px;
+        font-weight: 700;
+    }
 }
 
 /*============== Medium device style ================*/
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  .hero-title {
-    font-size: 24px;
-    font-weight: 700;
-  }
+    .hero-title {
+        font-size: 24px;
+        font-weight: 700;
+    }
 }
-
-/* .tabs-container {
-  background-color: #fff;
-  border-bottom: 1px solid rgba(229, 229, 229);
-}
-.tab-btn {
-  padding: 12px;
-  padding-bottom: 12px;
-  border: none;
-  background: none;
-  font-size: 16px;
-  /* color: #3392ff; */
-  color: rgb(115, 138, 140);
-  font-weight: 600;
-}
-.active-tab {
-  color: #2585f8;
-  border-bottom: 2px solid #2585f8;
-}
-
-.content-box .content {
-  display: none;
-}
-.content-box .content.active-content {
-  display: block;
-} */

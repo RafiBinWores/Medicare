@@ -22,7 +22,7 @@
                         better health.
                     </p>
 
-                    <a class="btn btn-primary mt-3 px-3" href="">Explore Now</a>
+                    <a class="btn btn-primary mt-3 px-3" href="#specialization">Explore Now</a>
                 </div>
                 <div class="hero-image">
                     <img class="w-100 rounded-4" src="{{ asset('assets/img/doc.jpg') }}" alt="Hero image">
@@ -33,131 +33,163 @@
     </section>
 
     <!-- Doctor specialization section -->
-    <section class="specialization">
+    <section class="specialization" id="specialization">
         <div class="container">
             <div class="title-content">
                 <div class="d-flex align-items-center justify-content-between">
                     <h3>Consult our top specialized doctors</h3>
-                    <a class="d-none d-md-block fw-medium" href="">View all <i
+                    <a class="d-none d-md-block fw-medium" href="{{ route('frontend.specializations') }}">View all <i
                             class="fa-regular fa-angle-right"></i></a>
                 </div>
                 <p>Our doctors are ready to serve you 24/7</p>
             </div>
 
             <div class="row text-center">
-                <div class="col-6 col-md-4 col-lg-2 mt-3">
-                    <div class="specialization-card">
-                        <img src="assets/img/cardio.png" alt="">
-                        <p>Cardiologist</p>
+                @foreach ($specializations as $specialization)
+                    <div class="col-6 col-md-4 col-lg-2 mt-3">
+                        <a href="{{ route('specializations.specializedDoctor', $specialization->slug) }}"
+                            class="specialization-card">
+                            <img src="{{ Storage::url('specialization/' . $specialization->image) }}"
+                                alt="{{ $specialization->name }}">
+                            <p>{{ $specialization->name }}</p>
+                        </a>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mt-3">
-                    <div class="specialization-card">
-                        <img src="assets/img/teeth.png" alt="">
-                        <p>Dentist</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mt-3">
-                    <div class="specialization-card">
-                        <img src="assets/img/cardio.png" alt="">
-                        <p>Cardiothoracic and Vascular Surgeon</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mt-3">
-                    <div class="specialization-card">
-                        <i class="fa-solid fa-heart-circle-bolt"></i>
-                        <p>Cardiologist</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mt-3">
-                    <div class="specialization-card">
-                        <i class="fa-solid fa-heart-circle-bolt"></i>
-                        <p>Andrology & Transplant Surgeon</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mt-3">
-                    <div class="specialization-card">
-                        <i class="fa-solid fa-heart-circle-bolt"></i>
-                        <p>Cardiologist</p>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
             <a class="specialization-view-btn" href="">View all <i class="fa-regular fa-angle-right"></i></a>
         </div>
     </section>
 
     <!-- Popular doctor section -->
-    <section class="popular-doctors">
-        <div class="container">
-            <div class="title-content">
-                <div class="d-flex align-items-center justify-content-between">
-                    <h3>Popular Doctors</h3>
-                    <a class="fw-medium" href="">View all <i class="fa-regular fa-angle-right"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card doctor-card mt-3">
-                        <img src="assets/img/doc.jpg" class="rounded-1 p-3 pb-0" alt="Doctor image">
-                        <div class="card-body p-3">
-                            <span class="doctor-specialization">Dentist</span>
-                            <p class="card-text mt-2 mb-1 fw-bold">
-                                Asst. Prof. Dr. Tahmina Begum
-                            </p>
-                            <p class="card-text text-primary fw-medium mb-1" style="font-size: 14px;">
-                                20 Years
-                            </p>
-                            <p class="card-text" style="font-size: 14px;">
-                                House # 1-2, Block # D, Main Road, South Banasree, Dhaka, 1219
-                            </p>
-
-                            <a class="w-100 btn btn-outline-primary text-center" href="">Book Now</a>
-                        </div>
+    @if ($doctors->isNotEmpty())
+        <section class="popular-doctors">
+            <div class="container">
+                <div class="title-content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3>Popular Doctors</h3>
+                        <a class="fw-medium" href="{{ route('doctors.view') }}">View all <i
+                                class="fa-regular fa-angle-right"></i></a>
                     </div>
                 </div>
 
+                <div class="row">
+                    @foreach ($doctors as $doctor)
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card doctor-card mt-3">
+                                <img src="{{ Storage::url('doctor/' . $doctor->image) }}" class="p-3 pb-0"
+                                    alt="Doctor image">
+                                <div class="card-body p-3">
+                                    <span class="doctor-specialization">{{ $doctor->specialization->name }}</span>
+                                    <p class="card-text mt-2 mb-1 fw-bold">
+                                        {{ $doctor->name }}
+                                    </p>
+                                    <p class="card-text text-primary fw-medium mb-1" style="font-size: 14px;">
+                                        {{ $doctor->experience }} Years
+                                    </p>
+                                    <p class="card-text" style="font-size: 14px;">
+                                        {{ $doctor->clinic_address }}
+                                    </p>
+
+                                    <a class="w-100 btn btn-outline-primary text-center"
+                                        href="{{ route('doctors.doctorDetails', $doctor->slug) }}">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
 
     <!-- Popular Ambulance section -->
-    <section class="popular-ambulance" style="margin-bottom: 100px;">
-        <div class="container">
-            <div class="title-content">
-                <div class="d-flex align-items-center justify-content-between">
-                    <h3>Ambulance</h3>
-                    <a class="fw-medium" href="">View all <i class="fa-regular fa-angle-right"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="card doctor-card mt-3">
-                        <img src="assets/img/doc.jpg" class="rounded-1 p-3 pb-0" alt="Doctor image">
-                        <div class="card-body p-3">
-                            <span class="doctor-specialization">Dhaka</span>
-                            <p class="card-text mt-2 mb-1 fw-bold">
-                                AL AMIN- AMBULANCE SERVICE
-                            </p>
-                            <a href="" class="card-text text-primary fw-medium" style="font-size: 14px;">
-                                01706602203
-                            </a>
-                            <a href="" class="card-text text-primary fw-medium" style="font-size: 14px;">
-                                01706602203
-                            </a>
-                            <p class="card-text" style="font-size: 14px;">
-                                House # 1-2, Block # D, Main Road, South Banasree, Dhaka, 1219
-                            </p>
-
-                            <a class="w-100 btn btn-outline-primary text-center" href="">Book Now</a>
-                        </div>
+    @if ($ambulances->isNotEmpty())
+        <section class="popular-ambulance" style="margin-bottom: 100px;">
+            <div class="container">
+                <div class="title-content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3>Ambulance</h3>
+                        <a class="fw-medium" href="{{ route('ambulances.view') }}">View all <i
+                                class="fa-regular fa-angle-right"></i></a>
                     </div>
                 </div>
 
+                <div class="row">
+                    @foreach ($ambulances as $ambulance)
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card doctor-card mt-3">
+                                <img src="{{ Storage::url('ambulance/' . $ambulance->image) }}" class="p-3 pb-0"
+                                    alt="Ambulance image">
+                                <div class="card-body p-3">
+                                    <span class="doctor-specialization"> {{ $ambulance->city->name }}</span>
+                                    <p class="card-text mt-2 mb-1 fw-bold">
+                                        {{ $ambulance->name }}
+                                    </p>
+                                    <a href="tel:{{ $ambulance->phone }}" class="card-text text-primary fw-medium"
+                                        style="font-size: 14px;">
+                                        {{ $ambulance->phone }}
+                                    </a>
+                                    <p class="card-text" style="font-size: 14px;">
+                                        {{ $ambulance->address }}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
+    <!--  Blood donor section -->
+    @if ($bloodDonors->isNotEmpty())
+        <section class="popular-ambulance" style="margin-bottom: 100px;">
+            <div class="container">
+                <div class="title-content">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3>Blood Donor</h3>
+                        <a class="fw-medium" href="{{ route('bloodDonors.view') }}">View all <i
+                                class="fa-regular fa-angle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @foreach ($bloodDonors as $bloodDonor)
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card doctor-card mt-3">
+                                @if (empty($bloodDonor->image))
+                                    <img src="{{ asset('assets/img/blood-donor.png') }}" class="p-3 pb-0"
+                                        alt="Doctor image">
+                                @else
+                                    <img src="{{ Storage::url('profile/' . $bloodDonor->image) }}" class="p-3 pb-0"
+                                        alt="Doctor image">
+                                @endif
+                                <div class="card-body p-3">
+                                    <span class="doctor-specialization">{{ $bloodDonor->city->name }}</span>
+                                    <p class="card-text mt-2 mb-1 fw-bold">
+                                        {{ $bloodDonor->name }}
+                                    </p>
+                                    <div class="mb-2">
+                                        <a href="tel:{{ $bloodDonor->phone }}" class="card-text text-primary fw-medium"
+                                            style="font-size: 14px;">
+                                            {{ $bloodDonor->phone }}
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </section>
+    @endif
+
 
     <!-- Latest Blog section -->
     <section class="blog">
@@ -170,50 +202,31 @@
                     <p class="blog-description">
                         Health articles that keep you informed about good health practices and achieve your goals.
                     </p>
-                    <a class="btn btn-primary" href="">Sell all articles</a>
+                    <a class="btn btn-primary" href="{{ route('blogs.view') }}">Sell all articles</a>
                 </div>
                 <div class="col-12 col-lg-8 mt-4 mt-lg-0">
                     <div class="swiper mySwiper w-100">
                         <div class="swiper-wrapper">
 
-                            <div class="swiper-slide">
-                                <div class="card card-slider border-0">
-                                    <img src="assets/img/doc.jpg" alt="">
-                                    <div class="card-body text-start mt-1 ps-0 pt-2">
-                                        <p class="mb-2">About Web devolvement</p>
-                                        <p class="blog-category">Health <span><i class="fa-regular fa-calendar-days"></i>
-                                                jan 24, 2024</span></p>
+                            @foreach ($blogs as $blog)
+                                <a href="{{ route('blogs.blogDetails', $blog->slug) }}" class="swiper-slide">
+                                    <div class="card card-slider border-0">
+                                        <img src="{{ Storage::url('blog/' . $blog->image) }}" alt="">
+                                        <div class="card-body text-start mt-1 ps-0 pt-2">
+                                            <p class="mb-2">{{ $blog->title }}</p>
+                                            <p class="blog-category"><span><i class="fa-regular fa-calendar-days"></i>
+                                                    {{ $blog->created_at->format('M d, Y') }}</span></p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-slider border-0">
-                                    <img src="assets/img/01.jpg" alt="">
-                                    <div class="card-body text-start mt-1 ps-0 pt-2">
-                                        <p class="mb-2">About ux/ui design</p>
-                                        <p class="blog-category">Health <span><i class="fa-regular fa-calendar-days"></i>
-                                                jan 24, 2024</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card card-slider border-0">
-                                    <img src="assets/img/doc.jpg" alt="">
-
-                                    <div class="card-body text-start mt-1 ps-0 pt-2">
-                                        <p class="mb-2">About ux/ui design</p>
-                                        <p class="blog-category">Health <span><i class="fa-regular fa-calendar-days"></i>
-                                                jan 24, 2024</span></p>
-                                    </div>
-                                </div>
-                            </div>
-
-
+                                </a>
+                            @endforeach
                         </div>
-                        <div class="swiper-pagination"></div>
+
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 @endsection

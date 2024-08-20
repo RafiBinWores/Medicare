@@ -20,21 +20,29 @@ class AuthController extends Controller
     public function processRegistration(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'phone' => 'required',
+            'phone' => 'required|unique:users,phone',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
         ]);
 
+        if ($validator->fails()) {
+            session()->flash('error', 'Email/Phone number already taken.');
+            return response()->json([
+                'status' => false,
+                'message' => 'Email/Phone number already taken.',
+            ]);
+        }
+
         if ($validator->passes()) {
 
             $user = new User();
-            $user->phone = $request->phone;
+            $user->phone = $request->full_phone;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();
 
             // Log in the user
-            // Auth::login($user);
+            Auth::login($user);
 
             session()->flash('success', 'User registration successful.');
             return response()->json([
@@ -55,6 +63,7 @@ class AuthController extends Controller
         return view('frontend.account.login');
     }
 
+    // For logged in user
     public function authenticate(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -65,7 +74,8 @@ class AuthController extends Controller
         if ($validator->passes()) {
 
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                return view('frontend.home');
+
+                return redirect()->route('frontend.home');
             } else {
                 return redirect()->route('account.login')->with('error', 'Email or password is incorrect.');
             }

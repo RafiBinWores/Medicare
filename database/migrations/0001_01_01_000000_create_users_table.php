@@ -17,10 +17,11 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('image')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('gender')->nullable();
             $table->string('blood_group')->nullable();
-            $table->tinyInteger('is_blood_donor')->default(0);
+            $table->enum('blood_donor', ['yes', 'no'])->default('no');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

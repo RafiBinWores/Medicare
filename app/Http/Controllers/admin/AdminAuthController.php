@@ -43,4 +43,11 @@ class AdminAuthController extends Controller
             return redirect()->route('admin.login')->withErrors($validator)->withInput($request->only('email'));
         }
     }
+
+    //Logout Admin
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login');
+    }
 }

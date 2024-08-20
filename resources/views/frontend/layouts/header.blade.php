@@ -1,7 +1,7 @@
 <header>
     <div class="nav-container">
-        <nav class="navbar navbar-expand-lg mt-2 mb-2">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container py-2">
                 <a class="navbar-brand d-flex align-items-center" href="/">
                     <img class="nav-logo" src="{{ asset('assets/img/logo.png') }}" alt="Logo">
                 </a>
@@ -20,14 +20,10 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item fw-medium" href="">My
-                                        Account</a>
+                                <li><a class="dropdown-item fw-medium" href="{{ route('account.profile') }}">Profile</a>
                                 </li>
-                                <li><a class="dropdown-item fw-medium" href="">Profile</a>
-                                </li>
-                                <li><a class="dropdown-item fw-medium" href="">Appointments</a>
-                                </li>
-                                <li><a class="dropdown-item fw-medium" href="">Change
+                                <li><a class="dropdown-item fw-medium"
+                                        href="{{ route('account.changePassword') }}">Change
                                         password</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -48,13 +44,13 @@
 
                     <ul class="navbar-nav gap-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="doctor.html">Find Doctor</a>
+                            <a class="nav-link" href="{{ route('doctors.view') }}">Find Doctor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Find Ambulance</a>
+                            <a class="nav-link" href="{{ route('ambulances.view') }}">Find Ambulance</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Find Blood Donor</a>
+                            <a class="nav-link" href="{{ route('bloodDonors.view') }}">Find Blood Donor</a>
                         </li>
                     </ul>
 
@@ -66,7 +62,7 @@
                                 href="{{ route('account.registration') }}">Sign up</a>
                         </div>
                     @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown d-none d-lg-block">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <i class="fa-regular fa-user"></i> My account
@@ -79,14 +75,11 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item fw-medium" href="">My
-                                        Account</a>
+                                <li><a class="dropdown-item fw-medium"
+                                        href="{{ route('account.profile') }}">Profile</a>
                                 </li>
-                                <li><a class="dropdown-item fw-medium" href="">Profile</a>
-                                </li>
-                                <li><a class="dropdown-item fw-medium" href="">Appointments</a>
-                                </li>
-                                <li><a class="dropdown-item fw-medium" href="">Change
+                                <li><a class="dropdown-item fw-medium"
+                                        href="{{ route('account.changePassword') }}">Change
                                         password</a></li>
                                 <li>
                                     <hr class="dropdown-divider">

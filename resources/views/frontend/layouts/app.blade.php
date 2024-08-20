@@ -19,6 +19,17 @@
 
     <!-- Custom css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    {{-- intl-tel-input css --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/intTelInput.css') }}">
+
+    {{-- DatePicker --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/datepicker.material.css') }}">
+
+    {{-- Select2 --}}
+    <link href="{{ asset('admin-assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+
+    @yield('customCSS')
 </head>
 
 <body>
@@ -33,8 +44,14 @@
     <!-- footer -->
     @include('frontend.layouts.footer')
 
+    <script src="{{ asset('admin-assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
+    <script src="{{ asset('assets/js/intTelInput.js') }}"></script>
+    <script src="{{ asset('admin-assets/libs/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/pages/form-advanced.init.js') }}"></script>
+    <script src="{{ asset('assets/js/datepicker.js') }}"></script>
 
     <script>
         $.ajaxSetup({
@@ -70,6 +87,46 @@
             },
         });
     </script>
+
+    @if (Session::has('success'))
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-right',
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast',
+                },
+                showConfirmButton: false,
+                timer: 2500,
+                timerProgressBar: true,
+            });
+            Toast.fire({
+                icon: 'success',
+                title: "{{ Session::get('success') }}",
+            });
+        </script>
+    @endif
+    @if (Session::has('error'))
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-right',
+                iconColor: 'white',
+                customClass: {
+                    popup: 'colored-toast',
+                },
+                showConfirmButton: false,
+                timer: 2500,
+                timerProgressBar: true,
+            });
+            Toast.fire({
+                icon: 'error',
+                title: "{{ Session::get('error') }}",
+            })
+        </script>
+    @endif
+
 
     @yield('customJs')
 

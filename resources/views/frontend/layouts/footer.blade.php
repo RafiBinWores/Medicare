@@ -29,26 +29,26 @@
                 <h5 class="md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">
                     Top Services</h5>
                 <p>
-                    <a href="houseVillaShifting" class="text-white" style="text-decoration: none">House & Villa
-                        Shifting</a>
+                    <a href="{{ route('doctors.view') }}" class="text-white" style="text-decoration: none">
+                        Find Doctor
+                    </a>
                 </p>
                 <p>
-                    <a href="officeCorporateShifting" class="text-white" style="text-decoration: none">Office &
-                        Corporate Shifting</a>
+                    <a href="{{ route('ambulances.view') }}" class="text-white" style="text-decoration: none">
+                        Find Ambulance
+                    </a>
                 </p>
                 <p>
-                    <a href="moversPackers" class="text-white" style="text-decoration: none">Movers & Packers</a>
-                </p>
-                <p>
-                    <a href="loadingUnloading" class="text-white" style="text-decoration: none">Loading &
-                        Unloading</a>
+                    <a href="{{ route('bloodDonors.view') }}" class="text-white" style="text-decoration: none">
+                        Find Blood Donor
+                    </a>
                 </p>
             </div>
             <div class="col-md-3 col-lg-2 mx-auto mt-3">
                 <h5 class="md-4 font-weight-bold text-white pb-2 mb-3 text-danger border-bottom border-white border-3">
                     Useful links</h5>
                 <p>
-                    <a href="index" class="text-white">Home</a>
+                    <a href="{{ route('frontend.joinMedicare') }}" class="text-white">Join Medicare</a>
                 </p>
                 <p>
                     <a href="" class="text-white" style="text-decoration: none">About us</a>

@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin.guest' => \App\Http\Middleware\AdminRedirect::class,
             'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
+            'checkUserRole' => \App\Http\Middleware\CheckUserRole::class,
         ]);
 
         $middleware->redirectTo(

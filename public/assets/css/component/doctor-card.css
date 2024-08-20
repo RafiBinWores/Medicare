@@ -1,11 +1,15 @@
+.doctor-card img {
+    height: 250px;
+    object-fit: cover;
+}
 .popular-doctors {
-  margin-bottom: 100px;
+    margin-bottom: 100px;
 }
 .doctor-specialization {
-  padding: 5px 8px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #0d6efd;
-  background-color: #def1fa;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0d6efd;
+    background-color: #def1fa;
 }

@@ -39,9 +39,39 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
+        ],
+        'specialization' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/specialization'),
+            'url' => env('APP_URL') . '/storage/specialization',
+            'visibility' => 'public',
+        ],
+        'ambulance' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/ambulance'),
+            'url' => env('APP_URL') . '/storage/ambulance',
+            'visibility' => 'public',
+        ],
+        'doctor' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/doctor'),
+            'url' => env('APP_URL') . '/storage/doctor',
+            'visibility' => 'public',
+        ],
+        'profile' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/profile'),
+            'url' => env('APP_URL') . '/storage/profile',
+            'visibility' => 'public',
+        ],
+        'blog' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/blog'),
+            'url' => env('APP_URL') . '/storage/blog',
+            'visibility' => 'public',
         ],
 
         's3' => [
