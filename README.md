@@ -1,66 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Medicare
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Medicare** is a web application that allows users to book doctors, ambulances, and find blood donors. It also provides a platform for doctors and ambulance service providers to register their services. Admins can approve these registrations to ensure only verified services are listed. Additionally, users can update their profile to become blood donors.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   **Doctor Booking**: Users can search for and book appointments with registered doctors.
+-   **Ambulance Booking**: Users can find and book ambulance services in their area.
+-   **Blood Donor Finder**: Users can search for blood donors by blood type and location.
+-   **Doctor & Ambulance Provider Registration**: Service providers can register on the platform. Their registrations are subject to admin approval.
+-   **Blood Donor Registration**: After logging in, users can choose to become blood donors by updating their profile and checking the "Become a Donor" option.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Getting Started
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-## Learning Laravel
+### Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   PHP (version >= 8.2)
+-   MySQL database
+-   Apache or Nginx web server
+-   Composer (for dependency management)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone the repository:
 
-## Laravel Sponsors
+    ```bash
+    git clone https://github.com/RafiBinWores/Medicare.git
+    cd medicare
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Install dependencies:
 
-### Premium Partners
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. Set up the database:
 
-## Contributing
+    - Create a database in your MySQL database.
+    - Rename `.env.example` to `.env` and update the database credentials.
+    - Run migrations to set up the tables:
+        ```bash
+        php artisan migrate
+        ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Serve the application:
 
-## Code of Conduct
+    ```bash
+    php artisan serve
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Access the application in your browser:
+    ```
+    http://localhost:8000
+    ```
 
-## Security Vulnerabilities
+### Usage
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **User Registration and Login**:
 
-## License
+    - Users can register and log in to the system to access all features.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. **Doctor & Ambulance Provider Registration**:
+
+    - Service providers must register through the platform.
+    - Admins can review and approve or reject their registration requests.
+
+3. **Book Services**:
+
+    - Once logged in, users can search for and book doctors or ambulance services.
+
+4. **Blood Donor Registration**:
+    - After logging in, users can update their profile to become a blood donor by checking the "Become a Donor" option.
+
+## Admin Panel
+
+-   Admins can log in to the admin panel to manage user registrations, approve or reject service provider requests, and manage the overall application settings.
+-   Access the application in your browse
+    ```
+    http://localhost:8000/admin/login
+    ```
+-   For adding an admin, you can either use Tinker or log in as a user and change your role from the database from 'user' to 'admin'.
+-   If you want to use Tinker, here are the Tinker commands:
+    ```bash
+    php artisan tinker
+    ```
+    ```php
+    $user = new User();
+    $user->name = 'My Name';
+    $user->email = 'email@example.com';
+    $user->password = Hash::make('password');
+    $user->role = ('admin');
+    $user->save();
+    ```
