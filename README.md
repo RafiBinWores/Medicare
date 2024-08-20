@@ -77,7 +77,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 ## Admin Panel
 
 -   Admins can log in to the admin panel to manage user registrations, approve or reject service provider requests, and manage the overall application settings.
--   Access the application in your browse
+-   Access the admin panel in your browse
     ```
     http://localhost:8000/admin/login
     ```
