@@ -45,12 +45,20 @@ Follow these instructions to get a copy of the project up and running on your lo
         php artisan migrate
         ```
 
-4. Serve the application:
+4. Generate the application key:
+
+    ```bash
+    php artisan key:generate
+
+    ```
+    
+5. Serve the application:
 
     ```bash
     php artisan serve
     ```
 
+<<<<<<< HEAD
 5. Generate the application key:
 
     ```bash
@@ -58,6 +66,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
     ```
 
+=======
+>>>>>>> 35868f886a9f72f72499373b17bea92249bf16da
 6. Access the application in your browser:
     ```
     http://localhost:8000
@@ -84,7 +94,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 ## Admin Panel
 
 -   Admins can log in to the admin panel to manage user registrations, approve or reject service provider requests, and manage the overall application settings.
--   Access the application in your browse
+-   Access the admin panel in your browse
     ```
     http://localhost:8000/admin/login
     ```
