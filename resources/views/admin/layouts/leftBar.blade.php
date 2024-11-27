@@ -25,12 +25,12 @@
                     </a>
                 </li>
 
-                {{-- <li>
+                <li>
                     <a href="{{ route('cities.index') }}">
                         <i class="mdi mdi-city-variant-outline"></i>
                         <span> Cities </span>
                     </a>
-                </li> --}}
+                </li>
                 <li>
                     <a href="{{ route('educations.index') }}">
                         <i class="mdi mdi-city-variant-outline"></i>

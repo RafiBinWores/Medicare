@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('experience');
             $table->json('services')->nullable();
             $table->string('city');
+            $table->string('availability');
             $table->tinyInteger('is_approved')->default(0);
             $table->timestamps();
         });
