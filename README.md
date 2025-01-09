@@ -58,13 +58,6 @@ Follow these instructions to get a copy of the project up and running on your lo
     php artisan serve
     ```
 
-5. Generate the application key:
-
-    ```bash
-    php artisan key:generate
-
-    ```
-
 6. Access the application in your browser:
     ```
     http://localhost:8000
